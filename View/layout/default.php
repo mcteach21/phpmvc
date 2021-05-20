@@ -23,9 +23,9 @@ $ROOT = './';
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/"> <img
-                        src="${pageContext.request.contextPath}/assets/images/jakarta_ee_logo.png"
-                        alt="logo" class="logo" /> WebSite!
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/">
+              <!--  <img  src="" alt="logo" class="logo" /> -->
+                PHP-MVC!
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -34,34 +34,33 @@ $ROOT = './';
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a class="nav-link" href="${pageContext.request.contextPath}/main">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/main/about">About</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="<?= BASE_URL?>/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL?>/pages">About</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Database..
+                            Pages
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/main/db-users">Users</a>
                             <a class="dropdown-item" href="${pageContext.request.contextPath}/main/db-posts">Posts</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">config..</a>
+                           <!-- <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">config..</a>-->
                         </div>
                     </li>
 
                 </ul>
 
                 <div class="float-right" style="color:white;">
-                    <c:if test="${not empty user}">
+                    <!--<c:if test="${not empty user}">
                         <i class="fa fa-user"></i> ${user}
                         <a class="nav-link" href="${pageContext.request.contextPath}/main/logout"
                            style="display:inline; color:crimson;">
                             <i class="fa fa-sign-out fa-lg"></i>
                         </a>
-                    </c:if>
-                    <c:if test="${empty user}">
-                        <a class="nav-link" href="${pageContext.request.contextPath}/main/login">
-                            <i class="fa fa-sign-in fa-lg"></i> Login</a>
-                    </c:if>
+                    </c:if>-->
+
+                   <a class="nav-link" href="${pageContext.request.contextPath}/main/login"><i class="fa fa-sign-in fa-lg"></i> Login</a>
+
                 </div>
             </div>
         </nav>

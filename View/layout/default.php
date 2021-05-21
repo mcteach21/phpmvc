@@ -6,7 +6,7 @@ $ROOT = './';
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <title>Layout..</title>
+    <title><?= $page ?></title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -35,16 +35,17 @@ $ROOT = './';
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active"><a class="nav-link" href="<?= BASE_URL?>/">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL?>/pages">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL?>/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL?>/contact">Contact</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Pages
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/main/db-users">Users</a>
-                            <a class="dropdown-item" href="${pageContext.request.contextPath}/main/db-posts">Posts</a>
+                            <a class="dropdown-item" href="<?= BASE_URL?>/pages">Blog</a>
+                            <a class="dropdown-item" href="<?= BASE_URL?>/users">Users</a>
                            <!-- <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">config..</a>-->
+                            <a class="dropdown-item" href=<?= BASE_URL?>/contact"#">config..</a>-->
                         </div>
                     </li>
 
@@ -59,14 +60,14 @@ $ROOT = './';
                         </a>
                     </c:if>-->
 
-                   <a class="nav-link" href="${pageContext.request.contextPath}/main/login"><i class="fa fa-sign-in fa-lg"></i> Login</a>
+                   <a class="nav-link" href="<?= BASE_URL?>/admin"><i class="fa fa-sign-in fa-lg"></i> Login</a>
 
                 </div>
             </div>
         </nav>
     </header>
     <div role="main" class="container">
-        <h3>title..</h3>
+        <h3><?=ucfirst($page)?></h3>
         <?php echo $content_for_layout;?>
     </div>
 

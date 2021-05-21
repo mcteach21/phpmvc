@@ -10,13 +10,7 @@ class Controller{
 	}
 	
 	function view($params){
-
-		$view_name=isset($params[0])?$params[0]:'index';	
-
-		//$this->vars['message']="Bienvenue sur la page : ".$nom;
-
-		extract($this->vars);
-		
+		$view_name=isset($params[0])?$params[0]:'index';
 		$view_path=ROOT.DS.'View'.DS.$this->request->controller.DS.$view_name.'.php';	
 
 		if (!file_exists($view_path)) {
@@ -25,6 +19,7 @@ class Controller{
 			$view_path=ROOT.DS.'View'.DS.'shared'.DS.'error.php';
 		}
 
+		$this->vars['page']=$view_name;
 		$this->render($view_path);
 	}
 
@@ -34,6 +29,9 @@ class Controller{
 		//$this->display($view);
 
 		ob_start();
+
+		extract($this->vars);
+
 		require $view;
 		$content_for_layout=ob_get_clean();
 		require ROOT.DS.'View'.DS.'layout'.DS.$this->layout.'.php';

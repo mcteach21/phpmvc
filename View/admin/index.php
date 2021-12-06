@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<div class="hero-unit">
-			<h2><?php echo 'Page \''.$page.'\' : '.$message;?></h2>
+			<h2><?php echo $message;?></h2>
 		</div>
 	</div>
 </body>

@@ -7,7 +7,8 @@ class AdminController extends Controller{
 		//$nom=isset($nom[0])?$nom[0]:'index';
 		//$this->set('message','Page : '.$nom.'..Identification Obligatoire!');
 
-        $this->vars['message']='Identification Obligatoire!';
+        $this->vars['message']='Admin : Identification Obligatoire!';
+        //$this->vars['page']='Admin';
         parent::view($nom);
 	}
 	

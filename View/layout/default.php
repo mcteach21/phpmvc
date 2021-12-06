@@ -24,8 +24,8 @@ $ROOT = './';
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="${pageContext.request.contextPath}/">
-              <!--  <img  src="" alt="logo" class="logo" /> -->
-                PHP-MVC!
+              <img  src="<?= BASE_URL?>/img/mvc.png" alt="logo" class="logo" />
+<!--               PHP MVC!-->
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarCollapse" aria-controls="navbarCollapse"
@@ -73,7 +73,7 @@ $ROOT = './';
 
     <footer class="footer">
         <div>
-            <span class="text-muted">&copy; mc.</span>
+            <span class="text-muted">&copy; MC. 2017-2021.</span>
         </div>
     </footer>
 
